@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc">
+<title id="title">ASUS K513EA Sequoia Hackintosh</title>
+<desc id="desc">A colorful gradient banner for the ASUS VivoBook K15 OLED Hackintosh project.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10152f"/><stop offset=".48" stop-color="#263a78"/><stop offset="1" stop-color="#6b2f83"/></linearGradient>
+ <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4de2c5"/><stop offset=".52" stop-color="#72a7ff"/><stop offset="1" stop-color="#e28cff"/></linearGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="42"/></filter>
+</defs>
+<rect width="1600" height="520" rx="34" fill="url(#bg)"/>
+<circle cx="1320" cy="80" r="190" fill="#8a5cff" opacity=".34" filter="url(#blur)"/>
+<circle cx="250" cy="480" r="190" fill="#16c9b2" opacity=".25" filter="url(#blur)"/>
+<path d="M0 400 C300 300 430 540 760 390 S1270 270 1600 390" fill="none" stroke="url(#glow)" stroke-width="3" opacity=".55"/>
+<g transform="translate(1160 112)" opacity=".9">
+ <rect x="0" y="0" width="300" height="190" rx="16" fill="#0b1024" stroke="#9cbaff" stroke-width="3"/>
+ <rect x="14" y="14" width="272" height="160" rx="8" fill="#18264d"/>
+ <path d="M-28 205 H328 L360 232 Q364 242 344 242 H-44 Q-64 242 -60 232Z" fill="#b9c8ef"/>
+ <path d="M75 205 H225 L210 216 H90Z" fill="#6578a8"/>
+ <path d="M30 42 H270 M30 60 H220 M30 78 H252" stroke="url(#glow)" stroke-width="5" stroke-linecap="round" opacity=".75"/>
+ <circle cx="245" cy="132" r="22" fill="none" stroke="#4de2c5" stroke-width="5"/>
+ <path d="M234 132 l8 8 16 -19" fill="none" stroke="#4de2c5" stroke-width="5" stroke-linecap="round"/>
+</g>
+<text x="100" y="170" fill="#9be9df" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="5">COMMUNITY HACKINTOSH PROJECT</text>
+<text x="96" y="260" fill="#ffffff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="64" font-weight="800">ASUS K513EA</text>
+<text x="100" y="326" fill="#d9e5ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="36" font-weight="600">macOS Sequoia 15 · Intel Iris Xe</text>
+<text x="100" y="390" fill="#c3cbea" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22">A documented, hardware-specific OpenCore configuration</text>
+<rect x="100" y="430" width="240" height="7" rx="3.5" fill="url(#glow)"/>
+</svg>
