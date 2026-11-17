@@ -54,9 +54,9 @@ The owner reports that the supplied EFI boots and that graphics acceleration is 
 
 ## 📦 Downloads
 
-- **EFI release assets:** [Open Releases](../../releases)
+- **EFI release assets:** [Open Releases](../../releases) and download the asset attached to the Sequoia release.
 - **Source and documentation:** Browse this repository.
-- If no release asset is listed yet, the sanitized EFI ZIP has not been published as a GitHub Release.
+- The downloadable EFI is a sanitized distribution copy; generate your own unique SMBIOS identity locally before use.
 
 Before using an EFI, inspect its configuration and create a backup of your current working EFI.
 
