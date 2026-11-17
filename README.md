@@ -1,38 +1,129 @@
-# ASUS VivoBook K15 OLED (K513EA) — macOS Sequoia
+<div align="center">
 
-Community Hackintosh notes for the ASUS VivoBook K15 OLED K513EA.
+<img src="assets/banner.svg" alt="ASUS K513EA Sequoia Hackintosh" width="100%">
 
-## Target hardware
+# ASUS VivoBook K15 OLED · Hackintosh
 
-- Laptop: ASUS VivoBook K15 OLED K513EA
-- CPU: Intel Core i5-1135G7 (Tiger Lake-U)
-- iGPU: Intel Iris Xe
-- RAM: 8 GB (reported configuration)
-- Display: built-in OLED panel
-- Wireless: Realtek (exact chipset must be identified before selecting a driver)
+### macOS Sequoia 15 · Intel Tiger Lake · Iris Xe
 
-## Current project status
+[![macOS](https://img.shields.io/badge/macOS-Sequoia%2015-7B61FF?style=for-the-badge&logo=apple&logoColor=white)](https://www.apple.com/macos/)
+[![CPU](https://img.shields.io/badge/CPU-i5--1135G7-0071C5?style=for-the-badge&logo=intel&logoColor=white)](https://www.intel.com/)
+[![GPU](https://img.shields.io/badge/iGPU-Iris%20Xe-00A98F?style=for-the-badge&logo=intel&logoColor=white)](https://www.intel.com/)
+[![OpenCore](https://img.shields.io/badge/Bootloader-OpenCore-333333?style=for-the-badge)](https://github.com/acidanthera/OpenCorePkg)
+[![License](https://img.shields.io/badge/Status-Experimental-orange?style=for-the-badge)](#-read-before-use)
 
-- Primary target: macOS Sequoia 15
-- The supplied EFI was reported by the owner to boot Sequoia and to include a working graphics configuration.
-- This report is user-provided; this repository has not independently certified every device, sleep/wake, power-management, audio, wireless, or graphics function.
-- Metal 3 availability is not claimed.
-- macOS Tahoe 26 and later versions are future, separately tested targets—not guaranteed by the Sequoia EFI.
+**A hardware-specific community project for the ASUS VivoBook K15 OLED K513EA.**
 
-## EFI archive
+[Getting Started](#-getting-started) · [Hardware](#-hardware) · [Compatibility](#-compatibility-roadmap) · [Downloads](#-downloads) · [Issues](../../issues)
 
-The sanitized EFI archive is prepared separately as `K513EA_Sequoia_EFI_Sanitized.zip`. It is not attached to this commit because the connected GitHub file-write interface supports text files, not direct binary archive transfer. Upload the ZIP through the GitHub web interface or attach it to a GitHub Release.
+</div>
 
-Before using the EFI, generate your own unique SMBIOS values (Serial Number, MLB, SystemUUID, and ROM) with the appropriate OpenCore tooling. The distributed archive has these values blanked/neutralized. Never reuse another person's identifiers.
+---
 
-## Important notes
+## ✨ Project overview
 
-- Back up your data and existing EFI before making changes.
-- Do not overwrite Windows partitions or existing boot files without a verified backup.
-- Confirm the exact Wi-Fi chipset, audio codec, touchpad, and other hardware IDs on your own unit.
-- Review the OpenCore configuration and kext/ACPI compatibility before booting.
-- Do not assume an EFI for Sequoia will work unchanged on macOS 26/27. Maintain separate version-specific configurations and validate each update.
+This repository documents and maintains an EFI configuration for the **ASUS VivoBook K15 OLED K513EA**, based on the owner's supplied setup.
 
-## Disclaimer
+The owner reports that the supplied EFI boots and that graphics acceleration is working. The configuration is being preserved as the baseline while its components and macOS compatibility are documented and validated.
 
-This is an experimental, hardware-specific community project. No warranty or guarantee of functionality is provided. macOS is Apple software; use only in accordance with Apple's applicable terms and your local laws.
+> [!IMPORTANT]
+> This is an experimental Hackintosh project, not an official Apple-supported installation. A successful boot on one machine does not guarantee that every hardware feature works on every K513EA variant.
+
+## 💻 Hardware
+
+| Component | Configuration |
+|---|---|
+| Laptop | ASUS VivoBook K15 OLED K513EA |
+| Processor | Intel Core i5-1135G7 · Tiger Lake-U |
+| Integrated graphics | Intel Iris Xe |
+| Memory | 8 GB (owner-reported) |
+| Display | Built-in OLED |
+| Wireless | Realtek (exact chipset ID still to be confirmed) |
+| Bootloader | OpenCore (version to be confirmed from EFI) |
+| Primary OS target | macOS Sequoia 15 |
+
+## 🧭 Compatibility roadmap
+
+| macOS generation | Project status | Policy |
+|---|---|---|
+| **Sequoia 15** | 🟡 Primary target | Preserve supplied EFI; validate exact build and hardware |
+| **Tahoe 26** | ⚪ Planned | Separate compatibility profile; do not assume Sequoia EFI works unchanged |
+| **macOS 27** | ⚪ Future | Enable only after upstream support and real testing |
+
+**Graphics note:** Iris Xe acceleration is owner-reported as working in the supplied setup. Metal 3 support is **not established**. Graphics acceleration, Metal API availability, and individual Metal feature sets are different claims and must be tested separately.
+
+## 📦 Downloads
+
+- **EFI release assets:** [Open Releases](../../releases)
+- **Source and documentation:** Browse this repository.
+- If no release asset is listed yet, the sanitized EFI ZIP has not been published as a GitHub Release.
+
+Before using an EFI, inspect its configuration and create a backup of your current working EFI.
+
+## 🚀 Getting started
+
+1. Read this README and the compatibility notes.
+2. Download the EFI archive from **Releases**, when available.
+3. Keep a backup of your existing EFI and important data.
+4. Generate your own unique SMBIOS identity (Serial Number, MLB, SystemUUID and ROM) using appropriate OpenCore tooling. Never reuse identifiers from another person's EFI.
+5. Review the config, ACPI, drivers and kext versions for your exact hardware and macOS build.
+6. Test from a separate USB EFI first. Do not overwrite your internal boot setup until the USB test is successful.
+
+> [!CAUTION]
+> Never publish your generated SMBIOS values. Do not erase, repartition, or modify Windows boot files as part of EFI testing.
+
+## 🧩 What is being tracked
+
+- [x] Owner-supplied EFI received
+- [x] Privacy-scrubbed distribution copy prepared (SMBIOS fields neutralized)
+- [x] Initial project README
+- [ ] Confirm exact macOS Sequoia build and successful boot evidence
+- [ ] Inventory OpenCore, drivers, ACPI and every kext version
+- [ ] Confirm exact Wi-Fi, Bluetooth, audio and touchpad hardware IDs
+- [ ] Validate brightness, battery, USB, sleep/wake and power management
+- [ ] Document graphics configuration and Metal feature support
+- [ ] Add reproducible validation/build scripts
+- [ ] Create separately tested Tahoe 26 profile
+- [ ] Evaluate future macOS 27 compatibility when upstream support exists
+
+## 🔐 Privacy & distribution
+
+The prepared public EFI copy has the following SMBIOS fields neutralized:
+
+- `SystemSerialNumber`
+- `MLB`
+- `SystemUUID`
+- `ROM`
+
+This is a privacy precaution, not a ready-to-use generated SMBIOS identity. Configure unique values locally before using services that require a valid SMBIOS identity. Always inspect the complete EFI for other personal data before redistribution.
+
+## 🤝 Contributing / reporting issues
+
+When reporting a problem, include:
+
+- Exact K513EA variant and hardware IDs
+- macOS version and build number
+- OpenCore version
+- Relevant kext versions
+- A sanitized config excerpt or log
+
+**Do not attach serial numbers, MLB, ROM, UUID, passwords, personal files, or unredacted logs.**
+
+## 📚 Upstream references
+
+- [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg)
+- [WhateverXe](https://github.com/b00t0x/WhateverXe)
+- [WhateverXe-Graphics](https://github.com/b00t0x/WhateverXe-Graphics)
+- [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
+
+All upstream projects retain their own licenses and documentation. This repository does not claim affiliation with ASUS, Apple, Intel, or the upstream developers.
+
+## ⚖️ Disclaimer
+
+This project is provided **as-is**, for research and educational use. No warranty is provided. You are responsible for backups, hardware compatibility checks, and compliance with applicable software terms and laws.
+
+<div align="center">
+
+**Made for the K513EA · Maintained with care**
+
+</div>
